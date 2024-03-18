@@ -1,0 +1,32 @@
+.custom-nav {
+    display: flex;
+    justify-content: space-between; /* Aligns items to the start and end of the container */
+    align-items: center; /* Centers items vertically */
+    background-color: #333;
+    padding: 26px;
+  }
+  
+  .brand-container {
+    flex-grow: 1; /* Allows brand link to take remaining space */
+  }
+  
+  .brand-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+  }
+  
+  .buttons-container {
+    display: flex;
+  }
+  
+  .custom-button {
+    background-color: #17A26D;
+    color: #FFF;
+    border: none;
+    border-radius: 20px;
+    padding: 9px 20px;
+    cursor: pointer;
+    margin-left: 21px;
+  }
+  

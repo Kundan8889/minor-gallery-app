@@ -1,0 +1,29 @@
+.container {
+    margin-top: 50px;
+}
+  
+.form-group {
+    margin-bottom: 20px;
+}
+  
+.custom-select {
+    width: 100%;
+}
+  
+.btn-primary {
+    margin-right: 10px;
+}
+  
+.row {
+    display: flex;
+    justify-content: center;
+}
+  
+.align-center {
+    text-align: center;
+}
+
+/* Set fixed width for file input */
+.form-control[type="file"] {
+    width: 100%; /* Adjust width as needed */
+}

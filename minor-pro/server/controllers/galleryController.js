@@ -1,6 +1,10 @@
+// Import kiya gaya galleryModel aur categoryModel from "../models/gallery.js" aur "../models/category.js" respectively.
 import galleryModel from "../models/gallery.js";
 import categoryModel from "../models/category.js";
+
+// galleryController class ko define kiya gaya hai.
 class galleryController {
+  // uploadImage function ko define kiya gaya hai jo ek image ko upload karta hai.
   static uploadImage = async (req, res) => {
     const { category } = req.body;
     try {
@@ -22,6 +26,7 @@ class galleryController {
     }
   };
 
+  // addNewCategory function ko define kiya gaya hai jo ek nayi category ko add karta hai.
   static addNewCategory = async (req, res) => {
     const { name } = req.body;
     try {
@@ -44,6 +49,7 @@ class galleryController {
     }
   };
 
+  // getAllCategories function ko define kiya gaya hai jo sabhi categories ko fetch karta hai.
   static getAllCategories = async (req, res) => {
     try {
       const fetchAllCategories = await categoryModel.find({});
@@ -53,6 +59,7 @@ class galleryController {
     }
   };
 
+  // getAllImages function ko define kiya gaya hai jo sabhi images ko fetch karta hai.
   static getAllImages = async (req, res) => {
     try {
       const fetchAllImages = await galleryModel.find({});
@@ -62,6 +69,7 @@ class galleryController {
     }
   };
 
+  // getsingleImage function ko define kiya gaya hai jo ek specific category ke images ko fetch karta hai.
   static getsingleImage = async (req, res) => {
     const { category } = req.query;
     try {
@@ -79,4 +87,5 @@ class galleryController {
   };
 }
 
+// galleryController class ko default export kiya gaya hai.
 export default galleryController;

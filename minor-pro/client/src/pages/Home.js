@@ -1,22 +1,34 @@
+// React aur useEffect ko import kiya gaya hai.
 import React, { useEffect } from "react";
+
+// react-redux se useSelector aur useDispatch ko import kiya gaya hai.
 import { useSelector, useDispatch } from "react-redux";
+
+// gallerySlice se getAllCategories, getAllImages aur getSingleImage ko import kiya gaya hai.
 import { getAllCategories, getAllImages, getSingleImage } from "../redux/reducers/gallerySlice";
-import "./Home.css"; // Import the CSS file
 
+// CSS file ko import kiya gaya hai.
+import "./Home.css";
+
+// Home component ko define kiya gaya hai.
 const Home = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); // useDispatch hook ka upyog kiya gaya hai.
 
+  // useEffect hook ka upyog kiya gaya hai images aur categories ko fetch karne ke liye.
   useEffect(() => {
     dispatch(getAllImages());
     dispatch(getAllCategories());
-  }, [dispatch]); // Added dispatch as a dependency
+  }, [dispatch]); // dispatch ko dependency ke roop mein add kiya gaya hai.
 
+  // useSelector hook ka upyog kiya gaya hai Redux store se images aur categories ko retrieve karne ke liye.
   const { images, categories } = useSelector((state) => state.gallery);
 
+  // handleCategories function ko define kiya gaya hai.
   const handleCategories = (id) => {
-    dispatch(getSingleImage(id));
+    dispatch(getSingleImage(id)); // getSingleImage action ko dispatch kiya gaya hai.
   };
 
+  // JSX ko return kiya gaya hai.
   return (
     <div className="container my-3">
       <div className="row ">
@@ -61,4 +73,5 @@ const Home = () => {
   );
 };
 
+// Home component ko export kiya gaya hai.
 export default Home;

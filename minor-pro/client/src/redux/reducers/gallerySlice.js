@@ -1,11 +1,16 @@
+// Redux Toolkit se createSlice aur createAsyncThunk ko import kiya gaya hai.
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
+// Axios ko import kiya gaya hai.
 import axios from "axios";
 
+// Initial state ko define kiya gaya hai.
 const initialState = {
   images: [],
   categories: [],
 };
 
+// getAllImages async thunk ko create kiya gaya hai.
 export const getAllImages = createAsyncThunk(
   "gallery/getAllImages",
   async () => {
@@ -14,6 +19,7 @@ export const getAllImages = createAsyncThunk(
   }
 );
 
+// getAllCategories async thunk ko create kiya gaya hai.
 export const getAllCategories = createAsyncThunk(
   "gallery/getAllCategories",
   async () => {
@@ -22,6 +28,7 @@ export const getAllCategories = createAsyncThunk(
   }
 );
 
+// postNewCategory async thunk ko create kiya gaya hai.
 export const postNewCategory = createAsyncThunk(
   "gallery/postNewCategory",
   async (payload) => {
@@ -33,6 +40,7 @@ export const postNewCategory = createAsyncThunk(
   }
 );
 
+// postNewImage async thunk ko create kiya gaya hai.
 export const postNewImage = createAsyncThunk(
   "gallery/postNewImage",
   async (payload) => {
@@ -44,6 +52,7 @@ export const postNewImage = createAsyncThunk(
   }
 );
 
+// getSingleImage async thunk ko create kiya gaya hai.
 export const getSingleImage = createAsyncThunk(
   "gallery/getSingleImage",
   async (payload) => {
@@ -54,6 +63,7 @@ export const getSingleImage = createAsyncThunk(
   }
 );
 
+// gallerySlice ko createSlice ke through define kiya gaya hai.
 const gallerySlice = createSlice({
   name: "gallery",
   initialState,
@@ -72,4 +82,5 @@ const gallerySlice = createSlice({
   },
 });
 
+// gallerySlice.reducer ko export kiya gaya hai.
 export default gallerySlice.reducer;
